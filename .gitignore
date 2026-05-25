@@ -1,0 +1,10 @@
+.venv/
+.venv*/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+exports/
+matched_photos/
+*.zip
+*.csv
+*.log
