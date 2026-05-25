@@ -4,8 +4,12 @@ from dataclasses import dataclass
 from io import BytesIO
 from zipfile import ZIP_DEFLATED, ZipFile
 
-import matplotlib.pyplot as plt
 import pandas as pd
+
+try:
+    import matplotlib.pyplot as plt
+except Exception:  # pragma: no cover - only hit when matplotlib is unavailable.
+    plt = None
 
 from .face_matcher import PhotoMatch
 from .image_utils import safe_filename
@@ -86,6 +90,9 @@ def build_matches_zip(results: list[PhotoMatch]) -> bytes:
 
 
 def confidence_histogram(results: list[PhotoMatch]):
+    if plt is None:
+        return None
+
     matched_scores = [result.best_confidence * 100 for result in results if result.matched]
     fig, ax = plt.subplots(figsize=(7, 3.4))
 

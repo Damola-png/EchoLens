@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Sequence
+from typing import Sequence, cast
 
-import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 from PIL import Image
@@ -244,12 +243,12 @@ def show_sidebar() -> tuple[float, float, str, int]:
         step=0.01,
         help="Matches below this displayed confidence are flagged for manual review.",
     )
-    detection_model = st.sidebar.selectbox(
+    detection_model = cast(str, st.sidebar.selectbox(
         "Face detector",
         options=("hog", "cnn"),
         index=0,
         help="HOG is faster on most laptops. CNN can be more accurate but is much slower without a GPU.",
-    )
+    ))
     num_jitters = st.sidebar.slider(
         "Embedding quality passes",
         min_value=1,
@@ -413,8 +412,10 @@ def show_reliability_dashboard(results: list[PhotoMatch]) -> None:
     chart_col, table_col = st.columns([0.55, 0.45])
     with chart_col:
         fig = confidence_histogram(results)
-        st.pyplot(fig, clear_figure=True)
-        plt.close(fig)
+        if fig is None:
+            st.info("Chart unavailable because matplotlib is not installed in this environment.")
+        else:
+            st.pyplot(fig, clear_figure=True)
 
     with table_col:
         summary_df = pd.DataFrame(
