@@ -19,7 +19,6 @@ The app is designed to feel like a real AI product: branded UI, session-only pri
 - Download evaluation results as a CSV file.
 - View a reliability dashboard with scan statistics and charts.
 - Clear uploaded images and face data from the Streamlit session.
-- Use `EchoLens Logo.png` as the branded app logo.
 
 ## Project Visuals
 
@@ -100,11 +99,11 @@ EchoLens uses the `face_recognition` library to detect faces and generate embedd
 7. EchoLens compares each event embedding to the reference embedding using face distance.
 8. If the best distance is below the selected threshold, the photo is marked as a match.
 
-The confidence score is a readable score derived from face distance. It is useful for ranking and review, but it should not be treated as a guaranteed identity claim.
+The confidence score is also a readable score derived from face distance. It is useful for ranking and review, but it should not be treated as a guaranteed identity claim.
 
 ## Privacy and Responsible AI
 
-EchoLens is intended for personal and event photo organization. It does not use a database and does not permanently store uploaded photos, face embeddings, or face data by default. Uploaded files and scan results live only inside the Streamlit session unless the user downloads a ZIP or CSV export.
+EchoLens is intended for personal use only. It does not use a database and does not permanently store uploaded photos, face embeddings, or face data by default. Uploaded files and scan results live only inside the Streamlit session unless the user downloads a ZIP or CSV export.
 
 The app also warns users when matches have lower confidence, because those results should be manually reviewed before sharing, archiving, or making decisions from them.
 
@@ -137,11 +136,6 @@ These metrics help explain model behavior and make the project more resume-worth
 
 ## Resume Bullets
 
-- Built EchoLens, a Streamlit-based AI photo search app that identifies a target person across event photo batches using face embeddings and similarity thresholds.
-- Implemented reference-face detection, batch face scanning, confidence scoring, low-confidence warnings, and downloadable ZIP/CSV exports.
-- Designed a privacy-conscious AI workflow that processes uploaded images in-session without permanent face storage by default.
-- Added a reliability dashboard with Pandas and Matplotlib to track images scanned, faces detected, match counts, average confidence, and review quality.
-- Structured the project into reusable Python modules for face matching, image handling, reporting, and UI orchestration.
 
 ## Run the App
 
