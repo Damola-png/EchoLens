@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="EchoLens architecture diagram">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#071823" />
+      <stop offset="100%" stop-color="#102c3a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg2)" />
+  <text x="60" y="84" fill="#e9f7ff" font-family="Arial, sans-serif" font-size="34" font-weight="700">EchoLens AI Pipeline Architecture</text>
+
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#d9f3ff" text-anchor="middle">
+    <rect x="60" y="180" width="180" height="94" rx="14" fill="#134055" stroke="#2f7086" />
+    <text x="150" y="236">Image Upload</text>
+
+    <rect x="290" y="180" width="190" height="94" rx="14" fill="#134055" stroke="#2f7086" />
+    <text x="385" y="236">Face Detection</text>
+
+    <rect x="530" y="180" width="190" height="94" rx="14" fill="#134055" stroke="#2f7086" />
+    <text x="625" y="236">Embeddings</text>
+
+    <rect x="770" y="180" width="190" height="94" rx="14" fill="#134055" stroke="#2f7086" />
+    <text x="865" y="236">Vector Index</text>
+
+    <rect x="1010" y="180" width="130" height="94" rx="14" fill="#134055" stroke="#2f7086" />
+    <text x="1075" y="236">Ranking</text>
+
+    <rect x="470" y="410" width="260" height="108" rx="16" fill="#18596f" stroke="#45a5c5" />
+    <text x="600" y="472">Search UI + API</text>
+  </g>
+
+  <g stroke="#5cc6de" stroke-width="4" fill="none">
+    <path d="M240 227 L290 227" />
+    <path d="M480 227 L530 227" />
+    <path d="M720 227 L770 227" />
+    <path d="M960 227 L1010 227" />
+    <path d="M1075 274 L1075 354 L600 354 L600 410" />
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#9bc9d8" font-size="18">
+    <text x="60" y="620">Scalability: modular indexing for larger datasets</text>
+    <text x="60" y="654">Privacy: constrained identity handling and sensitive output controls</text>
+  </g>
+</svg>

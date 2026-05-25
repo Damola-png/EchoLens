@@ -21,6 +21,20 @@ The app is designed to feel like a real AI product: branded UI, session-only pri
 - Clear uploaded images and face data from the Streamlit session.
 - Use `EchoLens Logo.png` as the branded app logo.
 
+## Project Visuals
+
+### Logo
+
+![EchoLens logo](EchoLens%20Logo.png)
+
+### Architecture Diagram
+
+![EchoLens architecture](assets/echolens-architecture.svg)
+
+This diagram represents the high-level processing flow, not a one-to-one map of source files.
+
+If the image does not render in your Markdown viewer, open `assets/echolens-architecture.svg` directly.
+
 ## Project Structure
 
 ```text
