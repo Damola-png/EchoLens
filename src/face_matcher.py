@@ -75,9 +75,10 @@ def backend_install_message() -> str:
     if FACE_RECOGNITION_IMPORT_ERROR is None:
         return "The face recognition backend is ready."
     return (
-        "The face_recognition package could not be imported. Install the packages in "
-        "requirements.txt, then restart Streamlit. On Windows, dlib may require CMake "
-        "and Microsoft Visual C++ Build Tools."
+        "The face_recognition package could not be imported. For local full matching, "
+        "install requirements-local.txt and restart Streamlit. On Windows, dlib may "
+        "require CMake and Microsoft Visual C++ Build Tools. On Streamlit Community "
+        "Cloud this backend may be unavailable due to dlib build limits."
     )
 
 
